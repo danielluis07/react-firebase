@@ -1,5 +1,6 @@
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import SignUp from "./pages/sign-up/SignUp";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
@@ -19,12 +20,31 @@ function App() {
     return currentUser ? children : <Navigate to="/login" />;
   };
 
+  const PreventAuthAccess = ({ children }) => {
+    return currentUser ? <Navigate to="/" /> : children;
+  };
+
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route path="login" element={<Login />} />
+            <Route
+              path="login"
+              element={
+                <PreventAuthAccess>
+                  <Login />
+                </PreventAuthAccess>
+              }
+            />
+            <Route
+              path="signup"
+              element={
+                <PreventAuthAccess>
+                  <SignUp />
+                </PreventAuthAccess>
+              }
+            />
             <Route
               index
               element={

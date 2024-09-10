@@ -1,4 +1,4 @@
-.login {
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,29 +38,6 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-    }
-
-    .not-registered {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 14px;
-
-      .signup-button {
-        margin-top: 10px;
-        padding: 10px;
-        font-size: 16px;
-        color: purple;
-        background-color: transparent;
-        border: 2px solid purple;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background-color: purple;
-          color: white;
-        }
-      }
     }
 
     span {
