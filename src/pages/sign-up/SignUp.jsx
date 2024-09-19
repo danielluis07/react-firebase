@@ -18,7 +18,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError("A senha não confere");
       return;
     }
 
@@ -26,7 +26,7 @@ const SignUp = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         dispatch({ type: "LOGIN", payload: user });
-        navigate("/"); // Redirect to home or dashboard
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -55,8 +55,8 @@ const SignUp = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button type="submit">Sign Up</button>
-        {error && <span>{error === true ? "Error signing up!" : error}</span>}
+        <button type="submit">Entrar</button>
+        {error && <span>{error === true ? "Erro ao entrar!" : error}</span>}
       </form>
     </div>
   );

@@ -45,12 +45,12 @@ const Login = () => {
         <button type="submit">Login</button>
         {error && <span>Email ou senha incorretos!</span>}
         <div className="not-registered">
-          <p>Not registered yet?</p>
+          <p>Não está registrado ainda?</p>
           <button
             type="button"
             className="signup-button"
             onClick={() => navigate("/signup")}>
-            Sign Up Here
+            Inscreva-se aqui
           </button>
         </div>
       </form>
